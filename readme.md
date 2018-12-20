@@ -1,5 +1,15 @@
 # EasyCSV  [![Release](https://jitpack.io/v/talhahasanzia/EasyCSV.svg)](https://jitpack.io/#talhahasanzia/EasyCSV/0.1)  [![GitHub issues](https://img.shields.io/github/issues/talhahasanzia/EasyCSV.svg)](https://github.com/talhahasanzia/EasyCSV/issues)   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-CSV Parser for Android
+*CSV Parser for Android.*
+Customisable CSV parser for Android in which "Parsers" and Csv "Sources" can act as plug and play to do the task of converting data from CSV rows and columns into Java objects.
+
+**Here are some project specific terms:**
+
+### Source
+A source is a contract that defines text read from any source that contains csv data. The source always outputs data in String format which is then used by parser. The source can be anything from reading from local files in assets or raw folders to a network response or in something like where Android receives exported CSV files from another system. You can write source of any type and it will always be compatible with EasyCSV, if you want to add any "Source" to the main repo, I really encourage you to do so. This makes it really flexible to add any source type and use a common "Facade" class called [EasyCSV](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/lib/EasyCSV.java) in client code to acheive complex conversion task with clean code approach.
+
+
+### Parser
+A parser is nothing but a logic that defines how you convert string data coming out from source. Usually most of the work in parser is same. It only differs where the result type is specified by the caller. For eg, currently 2 result types are in the project, 2D array and SampleObject. Parser makes sure that the caller receives the data in the form it expected, either in 2D array or a custom object. This is so powerful in cases where CSV data has to be converted into SQL Database compatible data or in model classes of the project. Parser can be implemented in a way to return any object like array of ContentValues class type which can be directly inserted into database. Feel free to write your own customized parsers and if possible contribute in main repo!
 
 
 
