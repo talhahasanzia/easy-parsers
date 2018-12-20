@@ -1,4 +1,4 @@
-package com.talhahasanzia.easycsv;
+package com.talhahasanzia.sampleapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

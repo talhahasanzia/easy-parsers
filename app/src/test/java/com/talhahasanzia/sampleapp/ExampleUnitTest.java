@@ -1,4 +1,4 @@
-package com.talhahasanzia.easycsv;
+package com.talhahasanzia.sampleapp;
 
 import org.junit.Test;
 
