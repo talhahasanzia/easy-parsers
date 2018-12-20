@@ -40,13 +40,13 @@ for gradle versions **below 4.0** use:
 ## Using in your project
 - Use built-in csv parser by providing CSV file path to the [EasyCSV](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/lib/EasyCSV.java) class like:
 ```
-  EasyCSV easyCSV = new EasyCSV(new AssetSource(context, "sample.csv"), new ArrayParser(), new ParseCallback<SampleObject[]>()...);
+  EasyCSV easyCSV = new EasyCSV(new AssetSource(context, "sample.csv"), new ArrayParser(), new ParseCallback<String[][]>()...);
   easyCSV.readCSV();
  ```
 - Receive results in callbacks:
 ```
     @Override
-    public void onParsingSuccess(SampleObject[] result) {
+    public void onParsingSuccess(String[][] result) {
         // success
     }
 
