@@ -83,7 +83,7 @@ Thanks to jitpack.io! Hosted at: https://jitpack.io/#talhahasanzia/EasyCSV/
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE.md](https://github.com/talhahasanzia/anaclock/blob/master/LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](https://github.com/talhahasanzia/EasyCSV/blob/master/LICENSE) file for details.
 
 *Sources from Android and Android APIs are subject to the licensing terms as per Android Open Source Project (AOSP).*
 
