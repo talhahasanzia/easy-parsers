@@ -16,7 +16,7 @@ A parser is nothing but a logic that defines how you convert string data coming 
 
 
 ## Release
-Available Version:  [0.1](https://github.com/talhahasanzia/easy-parsers/releases/tag/0.1) on [jitpack.io](https://jitpack.io/#talhahasanzia/EasyCSV/0.1) 
+Available Version:  [0.2](https://github.com/talhahasanzia/easy-parsers/releases/tag/0.1) on [jitpack.io](https://jitpack.io/#talhahasanzia/EasyCSV/0.1) 
 
 
 ## Library Source
