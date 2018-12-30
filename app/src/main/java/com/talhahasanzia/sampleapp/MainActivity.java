@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.talhahasanzia.csv.core.ParseCallback;
 import com.talhahasanzia.csv.exceptions.ParseException;
-import com.talhahasanzia.csv.lib.EasyCSV;
+import com.talhahasanzia.csv.lib.EasyParser;
 import com.talhahasanzia.sampleapp.models.SampleObject;
 import com.talhahasanzia.sampleapp.parsers.SampleObjectParser;
 import com.talhahasanzia.csv.sources.AssetSource;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements ParseCallback<Sam
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EasyCSV easyCSV = new EasyCSV(new AssetSource(this, "sample.csv"), new SampleObjectParser(), this);
+        EasyParser easyCSV = new EasyParser(new AssetSource(this, "sample.csv"), new SampleObjectParser(), this);
         easyCSV.parse();
     }
 

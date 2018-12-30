@@ -12,16 +12,16 @@ import com.talhahasanzia.csv.exceptions.ParseException;
  * <p></p>
  * <b>Public Methods:</b><p></p> Only listing to public methods usage.
  */
-public class EasyCSV implements SourceCallback {
+public class EasyParser implements SourceCallback {
 
     private Source source;
     private Parser parser;
     private ParseCallback parseCallback;
 
-    public EasyCSV() {
+    public EasyParser() {
     }
 
-    public EasyCSV(Source source, Parser parser, ParseCallback parseCallback) {
+    public EasyParser(Source source, Parser parser, ParseCallback parseCallback) {
         this.source = source;
         this.parser = parser;
         this.parseCallback = parseCallback;
