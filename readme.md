@@ -2,7 +2,7 @@
 *Custom Parser for Android.*
 
 
-Customisable parser for Android in which "Parsers" and Csv "Sources" can act as plug and play to do the task of converting data from CSV rows and columns into Java objects.
+Customisable parser for Android in which "Parsers" and Csv "Sources" can act as plug and play to do the task of converting data from CSV rows and columns into Java objects. This was initially made for CSV parsing but looking at it flexibility to add parsers and sources was renamed to Easy Parsers since you can add any kind of source and parser to this library. (Or in your project while using this library)
 
 **Here are some project specific terms:**
 
