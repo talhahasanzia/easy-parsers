@@ -4,7 +4,6 @@ import com.talhahasanzia.csv.core.ParseCallback;
 import com.talhahasanzia.csv.core.Parser;
 import com.talhahasanzia.csv.core.Source;
 import com.talhahasanzia.csv.core.SourceCallback;
-import com.talhahasanzia.csv.exceptions.ColumnsLengthException;
 import com.talhahasanzia.csv.exceptions.ParseException;
 
 /**
@@ -19,6 +18,8 @@ public class EasyCSV implements SourceCallback {
     private Parser parser;
     private ParseCallback parseCallback;
 
+    public EasyCSV() {
+    }
 
     public EasyCSV(Source source, Parser parser, ParseCallback parseCallback) {
         this.source = source;
@@ -26,7 +27,19 @@ public class EasyCSV implements SourceCallback {
         this.parseCallback = parseCallback;
     }
 
-    public void readCSV() {
+    public void setSource(Source source) {
+        this.source = source;
+    }
+
+    public void setParser(Parser parser) {
+        this.parser = parser;
+    }
+
+    public void setParseCallback(ParseCallback parseCallback) {
+        this.parseCallback = parseCallback;
+    }
+
+    public void parse() {
         source.getData(this);
     }
 

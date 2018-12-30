@@ -1,4 +1,4 @@
-package com.talhahasanzia.csv.models;
+package com.talhahasanzia.sampleapp.models;
 
 public class SampleObject {
     private String name;
