@@ -1,5 +1,7 @@
 # Easy Parsers  [![Release](https://jitpack.io/v/talhahasanzia/easy-parsers.svg)](https://jitpack.io/#talhahasanzia/easy-parsers/0.2)  [![GitHub issues](https://img.shields.io/github/issues/talhahasanzia/easy-parsers.svg)](https://github.com/talhahasanzia/easy-parsers/issues)   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 *Custom Parser for Android.*
+
+
 Customisable parser for Android in which "Parsers" and Csv "Sources" can act as plug and play to do the task of converting data from CSV rows and columns into Java objects.
 
 **Here are some project specific terms:**
