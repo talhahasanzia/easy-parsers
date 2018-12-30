@@ -1,10 +1,11 @@
-package com.talhahasanzia.csv.parsers;
+package com.talhahasanzia.sampleapp.parsers;
 
 import com.talhahasanzia.csv.core.ParseCallback;
 import com.talhahasanzia.csv.core.Parser;
 import com.talhahasanzia.csv.exceptions.ColumnsLengthException;
 import com.talhahasanzia.csv.models.Row;
-import com.talhahasanzia.csv.models.SampleObject;
+import com.talhahasanzia.sampleapp.models.SampleObject;
+
 
 import java.util.LinkedList;
 import java.util.List;

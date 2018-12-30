@@ -1,11 +1,13 @@
-# EasyCSV  [![Release](https://jitpack.io/v/talhahasanzia/EasyCSV.svg)](https://jitpack.io/#talhahasanzia/EasyCSV/0.1)  [![GitHub issues](https://img.shields.io/github/issues/talhahasanzia/EasyCSV.svg)](https://github.com/talhahasanzia/EasyCSV/issues)   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-*CSV Parser for Android.*
-Customisable CSV parser for Android in which "Parsers" and Csv "Sources" can act as plug and play to do the task of converting data from CSV rows and columns into Java objects.
+# Easy Parsers  [![Release](https://jitpack.io/v/talhahasanzia/easy-parsers.svg)](https://jitpack.io/#talhahasanzia/easy-parsers/0.2)  [![GitHub issues](https://img.shields.io/github/issues/talhahasanzia/easy-parsers.svg)](https://github.com/talhahasanzia/easy-parsers/issues)   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+*Custom Parser for Android.*
+
+
+Customisable parser for Android in which "Parsers" and Csv "Sources" can act as plug and play to do the task of converting data from CSV rows and columns into Java objects. This was initially made for CSV parsing but looking at it flexibility to add parsers and sources was renamed to Easy Parsers since you can add any kind of source and parser to this library. (Or in your project while using this library)
 
 **Here are some project specific terms:**
 
 ### Source
-A source is a contract that defines text read from any source that contains csv data. The source always outputs data in String format which is then used by parser. The source can be anything from reading from local files in assets or raw folders to a network response or in something like where Android receives exported CSV files from another system. You can write source of any type and it will always be compatible with EasyCSV, if you want to add any "Source" to the main repo, I really encourage you to do so. This makes it really flexible to add any source type and use a common "Facade" class called [EasyCSV](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/lib/EasyCSV.java) in client code to acheive complex conversion task with clean code approach.
+A source is a contract that defines text read from any source that contains csv data. The source always outputs data in String format which is then used by parser. The source can be anything from reading from local files in assets or raw folders to a network response or in something like where Android receives exported CSV files from another system. You can write source of any type and it will always be compatible with EasyCSV, if you want to add any "Source" to the main repo, I really encourage you to do so. This makes it really flexible to add any source type and use a common "Facade" class called [EasyParser](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/lib/EasyParser.java) in client code to acheive complex conversion task with clean code approach.
 
 
 ### Parser
@@ -14,11 +16,11 @@ A parser is nothing but a logic that defines how you convert string data coming 
 
 
 ## Release
-Available Version:  [0.1](https://github.com/talhahasanzia/EasyCSV/releases/tag/0.1) on [jitpack.io](https://jitpack.io/#talhahasanzia/EasyCSV/0.1) 
+Available Version:  [0.1](https://github.com/talhahasanzia/easy-parsers/releases/tag/0.1) on [jitpack.io](https://jitpack.io/#talhahasanzia/EasyCSV/0.1) 
 
 
 ## Library Source
-[Jump to library source.](https://github.com/talhahasanzia/EasyCSV/tree/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv)
+[Jump to library source.](https://github.com/talhahasanzia/easy-parsers/tree/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv)
 
 ## Getting Started
 
@@ -31,17 +33,17 @@ In your project level gradle, add:
 
 In your app level gradle **(4.0+)**, add:
 ```
-    implementation 'com.github.talhahasanzia:EasyCSV:0.1'
+    implementation 'com.github.talhahasanzia:easy-parsers:0.2'
 ```
 for gradle versions **below 4.0** use:
 ```
-    compile 'com.github.talhahasanzia:EasyCSV:0.1'
+    compile 'com.github.talhahasanzia:easy-parsers:0.2'
 ```
 ## Using in your project
-- Use built-in csv parser by providing CSV file path to the [EasyCSV](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/lib/EasyCSV.java) class like:
+- Use built-in csv parser by providing CSV file path to the [EasyParser](https://github.com/talhahasanzia/easy-parsers/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/lib/EasyParser.java) class like:
 ```
-  EasyCSV easyCSV = new EasyCSV(new AssetSource(context, "sample.csv"), new ArrayParser(), new ParseCallback<String[][]>()...);
-  easyCSV.readCSV();
+  EasyParser easyParser = new EasyParser(new AssetSource(context, "sample.csv"), new ArrayParser(), new ParseCallback<String[][]>()...);
+  easyParser.readCSV();
  ```
 - Receive results in callbacks:
 ```
@@ -56,11 +58,11 @@ for gradle versions **below 4.0** use:
     }
 ```
 
-- Add your own parsers using [Parser](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/core/Parser.java) interface.
-- Add your own source using [Source](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/core/Source.java) interface.
-- Currently only 1 source type is supported, that is [AssetSource](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/sources/AssetSource.java), meaning you can specify CSV files in your [assets](https://github.com/talhahasanzia/EasyCSV/tree/master/app/src/main/assets) folder.
-- A generic [ArrayParser](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/parsers/ArrayParser.java) is implemented, which returns csv data into 2D array. 
-- For illustration purposes, a [SampleObject](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/models/SampleObject.java) class is used in [ObjectParser](https://github.com/talhahasanzia/EasyCSV/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/parsers/SampleObjectParser.java) to show how can you write generic parsers to directly convert csv fields into java classes.
+- Add your own parsers using [Parser](https://github.com/talhahasanzia/easy-parsers/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/core/Parser.java) interface.
+- Add your own source using [Source](https://github.com/talhahasanzia/easy-parsers/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/core/Source.java) interface.
+- Currently only 1 source type is supported, that is [AssetSource](https://github.com/talhahasanzia/easy-parsers/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/sources/AssetSource.java), meaning you can specify CSV files in your [assets](https://github.com/talhahasanzia/easy-parsers/tree/master/app/src/main/assets) folder.
+- A generic [ArrayParser](https://github.com/talhahasanzia/easy-parsers/blob/master/easycsvlibrary/src/main/java/com/talhahasanzia/csv/parsers/ArrayParser.java) is implemented, which returns csv data into 2D array. 
+- For illustration purposes, a SampleObject class is used in ObjectParser in the sample "app" module to show how can you write generic parsers to directly convert csv fields into java classes.
 - Feel free to report issues and contribute.
 - Few source classes are empty, their implementation will be available soon.
   
@@ -75,7 +77,7 @@ for gradle versions **below 4.0** use:
 
 ## Hosting
 
-Thanks to jitpack.io! Hosted at: https://jitpack.io/#talhahasanzia/EasyCSV/
+Thanks to jitpack.io! Hosted at: https://jitpack.io/#talhahasanzia/easy-parsers/
 
 ## Authors
 
